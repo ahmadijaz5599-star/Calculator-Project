@@ -32,6 +32,12 @@
             .calculator{
                 width: 240px
             }
+
+            .B{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+            }
             
             .button{
                 color: rgb(0, 0, 0);
@@ -56,6 +62,7 @@
                 color: black;
                 border: black;
                 font-size: 19px;
+                
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
@@ -65,21 +72,6 @@
                 background-color: rgb(255, 209, 125);
             }
 
-            .clear-cal{
-                color: rgb(0, 0, 0);
-                background-color: orange;
-                float: right;
-                font-size: 20px;
-                margin-right: 50px;
-                border: none;
-                padding: 10px;
-                border-radius: 50%;
-                margin: 3px;
-            }
-            .clear-cal:hover{
-                padding: 10px;
-                background-color: rgb(255, 209, 125);
-            }
         </style>
     </head>
     <body>
@@ -153,23 +145,23 @@
                 ">.</button>
 
                 <button class="buttons" onclick="
-                calculation = eval(calculation);
-                console.log(calculation);
+                calculation = '';
                 displayCalculation();
-                localStorage.setItem('calculation', calculation);
-                ">=</button>
+                localStorage.removeItem('calculation');
+                console.log('Cleared')
+                ">C</button>
 
                 <button class="buttons" onclick="
                 updateCalculation('/');
                 ">÷</button>
 
-        
-            <button class="clear-cal" onclick="
-                calculation = '';
+                <button class="buttons" onclick="
+                calculation = eval(calculation);
+                console.log(calculation);
                 displayCalculation();
-                localStorage.removeItem('calculation');
-                console.log('Cleared')
-                ">Clear</button>
+                localStorage.setItem('calculation', calculation);
+                ">=</button>
+            
         
     </div>
 
