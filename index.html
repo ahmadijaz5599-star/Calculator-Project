@@ -49,12 +49,18 @@
                 height: 50px;
                 border-radius: 50%;
                 margin: 3px;
+                cursor: pointer;
+                cursor: not-allowed;
             }
-            button:hover{
+            .button:hover{
                 padding: 12px;
                 color: black;
                 background-color: rgb(204, 204, 204);
             }
+            .button:active{
+                
+            }
+            
 
             .buttons{
                 color: black;
@@ -62,7 +68,7 @@
                 color: black;
                 border: black;
                 font-size: 19px;
-                
+                float: right;
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
@@ -152,17 +158,16 @@
                 ">C</button>
 
                 <button class="buttons" onclick="
-                updateCalculation('/');
-                ">÷</button>
-
-                <button class="buttons" onclick="
                 calculation = eval(calculation);
                 console.log(calculation);
                 displayCalculation();
                 localStorage.setItem('calculation', calculation);
                 ">=</button>
-            
-        
+
+                <button class="buttons" onclick="
+                updateCalculation('/');
+                ">÷</button>
+
     </div>
 
 </div>
@@ -187,7 +192,13 @@
             }
 
             function displayCalculation(){
-                document.querySelector('.js-display').innerHTML = calculation;
+
+                let displayElement = document.querySelector('.js-display');
+                if(calculation === ''){
+                    displayElement.innerHTML = '0';
+                } else {
+                    displayElement.innerHTML = calculation;
+                }
             }
             
 
