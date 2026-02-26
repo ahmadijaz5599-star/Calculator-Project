@@ -29,6 +29,14 @@
                 min-height: 50px;
                 text-align: right;
                 padding: 10px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+            }
+
+            .js-display::-webkit-scrollbar {
+                display: hidden;
+                color: grey;
             }
 
             .calculator{
@@ -88,7 +96,8 @@
 
         <div class="calculator">
 
-    
+ 
+
  <p class="js-display"></p>
 
         <div class="B">
@@ -202,6 +211,8 @@
                 } else {
                     displayElement.innerHTML = calculation;
                 }
+
+                displayElement.scrollLeft = displayElement.scrollWidth;
             }
             
 
