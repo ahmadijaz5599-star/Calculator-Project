@@ -55,7 +55,7 @@
             
             .button{
                 color: rgb(0, 0, 0);
-                font-size: 20px;
+                font-size: 25px;
                 background-color: grey;
                 border: none;
                 padding: 10px;
@@ -72,11 +72,10 @@
             }
 
             .buttons{
-                color: black;
+                color: rgb(255, 255, 255);
                 background-color: orange;
-                color: black;
                 border: black;
-                font-size: 19px;
+                font-size: 27px;
                 float: right;
                 width: 50px;
                 height: 50px;
@@ -85,7 +84,24 @@
                 cursor: pointer;
             }
             .buttons:hover{
-                background-color: rgb(255, 209, 125);
+                background-color: rgb(251, 193, 85);
+            }
+
+            .clear-button{
+                color: rgb(255, 255, 255);
+                font-size: 20px;
+                background-color: rgb(72, 72, 72);
+                border: none;
+                padding: 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 3px;
+                cursor: pointer;
+            }
+            .clear-button:hover{
+                background-color: rgb(204, 204, 204);
+                color: black;
             }
 
         </style>
@@ -174,7 +190,7 @@
                 updateCalculation('/');
                 ">÷</button>
 
-                <button class="button" onclick="
+                <button class="clear-button" onclick="
                 calculation = '';
                 displayCalculation();
                 localStorage.removeItem('calculation');
