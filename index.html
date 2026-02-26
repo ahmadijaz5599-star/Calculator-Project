@@ -36,7 +36,6 @@
 
             .js-display::-webkit-scrollbar {
                 display: hidden;
-                color: rgb(138, 0, 0);
             }
 
             .calculator{
@@ -162,12 +161,7 @@
                 updateCalculation('0');
                 ">0</button>
 
-                <button class="buttons" onclick="
-                calculation = '';
-                displayCalculation();
-                localStorage.removeItem('calculation');
-                console.log('Cleared')
-                ">C</button>
+                
 
                 <button class="buttons" onclick="
                 calculation = eval(calculation);
@@ -179,6 +173,13 @@
                 <button class="buttons" onclick="
                 updateCalculation('/');
                 ">÷</button>
+
+                <button class="button" onclick="
+                calculation = '';
+                displayCalculation();
+                localStorage.removeItem('calculation');
+                console.log('Cleared')
+                ">AC</button>
 
     </div>
 
